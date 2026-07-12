@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15th Mainland Company | Alagomeji</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fixed Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <img src="bb-logo-national.png" alt="BB National Logo" class="logo logo-left">
+            <div class="header-text">
+                <h1>The Boys' Brigade Nigeria</h1>
+                <p class="sub-title">15th Mainland Company, Alagomeji</p>
+            </div>
+            <img src="company-logo.png" alt="15th Mainland Logo" class="logo logo-right">
+        </div>
+    </header>
+
+    <!-- Main Content Area (Safely pushed below the fixed header) -->
+    <main class="main-content">
+        
+        <!-- About Section -->
+        <section class="container about-section">
+            <h2>About Us</h2>
+            <p>Founded on the twin pillars of <strong>Religion and Discipline</strong>, the 15th Mainland Company Alagomeji is dedicated to the advancement of Christ’s Kingdom among Boys. Our motto is <em>"Sure and Stedfast"</em>.</p>
+        </section>
+
+        <!-- Leadership Section (Responsive Grid) -->
+        <section class="container">
+            <h2 class="section-title">Company Leadership</h2>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <img src="chaplain.jpeg" alt="The Chaplain">
+                    <h3>The Chaplain</h3>
+                </div>
+                <div class="leader-card">
+                    <img src="captain.jpeg" alt="The Captain">
+                    <h3>The Captain</h3>
+                </div>
+                <div class="leader-card">
+                    <img src="patron.jpg" alt="Chairman of Patrons">
+                    <h3>Chairman of Patrons</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Programmes Section -->
+        <section class="container events-section">
+            <h2 class="section-title">Upcoming Programmes</h2>
+            <div id="events-container" class="events-grid">
+                <!-- Data loaded dynamically from JSON -->
+            </div>
+        </section>
+
+        <!-- Personnel Roll Call Section -->
+        <section class="container roll-call">
+            <h2 class="section-title">Company Membership</h2>
+            <div class="accordion">
+                
+                <!-- Officers -->
+                <button class="accordion-btn" onclick="toggleSection('officers-p')">OFFICERS <span>+</span></button>
+                <div id="officers-p" class="panel"><ul id="list-officers"></ul></div>
+
+                <!-- NCOs -->
+                <button class="accordion-btn" onclick="toggleSection('ncos-p')">NCOs <span>+</span></button>
+                <div id="ncos-p" class="panel"><ul id="list-ncos"></ul></div>
+
+                <!-- Boys / Anchor Boys -->
+                <button class="accordion-btn" onclick="toggleSection('boys-p')">BOYS / ANCHOR BOYS <span>+</span></button>
+                <div id="boys-p" class="panel">
+                    <h4>Anchor Boys</h4>
+                    <ul id="list-anchors"></ul>
+                    <h4>Company Section</h4>
+                    <ul id="list-company"></ul>
+                </div>
+
+                <!-- Company EXCO -->
+                <button class="accordion-btn" onclick="toggleSection('exco-p')">COMPANY EXCO <span>+</span></button>
+                <div id="exco-p" class="panel"><ul id="list-exco"></ul></div>
+
+                <!-- Patrons & Patronesses -->
+                <button class="accordion-btn" onclick="toggleSection('patrons-p')">PATRONS & PATRONESSES <span>+</span></button>
+                <div id="patrons-p" class="panel"><ul id="list-patrons"></ul></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Boys' Brigade Nigeria - 15th Mainland Company. Sure and Stedfast.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
