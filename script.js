@@ -2,7 +2,7 @@
 async function loadSiteData() {
     try {
         const response = await fetch('data.json');
-        if (!response.ok) throw new Error("Unable to target data source matrix.");
+        if (!response.ok) throw new Error("Unable to target data source matrix or fetch data.json.");
         const data = await response.json();
 
         // Standard abstract helper function targeting list generation logic
@@ -38,17 +38,14 @@ async function loadSiteData() {
         if (eventContainer && data.events) {
             eventContainer.innerHTML = ""; 
             
-            // Get today's date at midnight for an accurate comparison
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
             let activeEventsCount = 0;
 
             data.events.forEach(event => {
-                // Parse the comparison date from the JSON
                 const eventDate = new Date(event.compareDate);
 
-                // ONLY show the event if it's today or in the future
                 if (eventDate >= today) {
                     activeEventsCount++;
                     eventContainer.innerHTML += `
@@ -61,7 +58,6 @@ async function loadSiteData() {
                 }
             });
 
-            // Fallback message if all listed events have passed
             if (activeEventsCount === 0) {
                 eventContainer.innerHTML = `
                     <div class="no-events" style="color: #003366; font-style: italic; grid-column: 1/-1; text-align: center; padding: 20px;">
@@ -72,25 +68,41 @@ async function loadSiteData() {
         }
 
     } catch (error) {
-        console.error("Error loading data:", error);
+        console.error("Error loading data from JSON file:", error);
+        // Fallback message visually displayed if the JSON fetch is blocked locally
+        const eventContainer = document.getElementById('events-container');
+        if (eventContainer) {
+            eventContainer.innerHTML = `<p style="color: red; text-align: center; grid-column: 1/-1;">Note: If testing locally from your desktop files directly, make sure to use a live server environment so JavaScript can securely read your data.json file.</p>`;
+        }
     }
-} /* <--- THIS BRACE WAS MISSING AND BREAKING EVERYTHING */
+}
 
-// Global scope toggle action logic mapping
+// Global scope toggle action logic mapping for Accordion panels
 function toggleSection(id) {
     const targetPanel = document.getElementById(id);
     if (!targetPanel) return;
     
     const isCurrentActive = targetPanel.style.display === "block";
+    const currentBtn = targetPanel.previousElementSibling;
     
     // Closes all other open panels for clean single accordion presentation
     document.querySelectorAll('.panel').forEach(panel => {
         panel.style.display = "none";
+        const btn = panel.previousElementSibling;
+        if (btn && btn.querySelector('span')) {
+            btn.querySelector('span').textContent = "+";
+        }
     });
 
-    // Toggle logic path
-    targetPanel.style.display = isCurrentActive ? "none" : "block";
+    // Toggle target paths and swap symbols smoothly
+    if (!isCurrentActive) {
+        targetPanel.style.display = "block";
+        if (currentBtn && currentBtn.querySelector('span')) currentBtn.querySelector('span').textContent = "−";
+    } else {
+        targetPanel.style.display = "none";
+        if (currentBtn && currentBtn.querySelector('span')) currentBtn.querySelector('span').textContent = "+";
+    }
 }
 
 // Bind load task execution framework to active runtime listener
-window.onload = loadSiteData;
+window.addEventListener('DOMContentLoaded', loadSiteData);

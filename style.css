@@ -24,7 +24,7 @@ body {
     background-color: var(--bb-blue);
     color: var(--white);
     border-bottom: 4px solid var(--bb-gold);
-    z-index: 1000; /* Keeps header strictly on top layer */
+    z-index: 1000;
     display: flex;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
@@ -43,8 +43,7 @@ body {
 .logo {
     height: 70px;
     width: auto;
-    object-contain: fit;
-    /* Optional blending fallback rule if images contain hard white background borders */
+    object-fit: contain; /* FIXED FROM object-contain: fit */
     mix-blend-mode: multiply; 
 }
 
@@ -69,7 +68,6 @@ body {
 
 /* --- DOCUMENT WRAPPER ADJUSTMENT --- */
 .main-content {
-    /* Pushes content cleanly downwards by 100px (header height) + 20px extra breathing room */
     margin-top: 120px; 
 }
 
@@ -89,25 +87,23 @@ body {
     box-shadow: var(--card-shadow);
 }
 
-/* --- RESPONSIVE LEADERSHIP GRID (MOBILE-FIRST) --- */
+/* --- RESPONSIVE LEADERSHIP GRID --- */
 .leadership-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Default: Single column layout for mobile phone screens */
+    grid-template-columns: 1fr;
     gap: 25px;
     margin-top: 20px;
 }
 
-/* Tablets Breakpoint */
 @media (min-width: 600px) {
     .leadership-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Desktop Breakpoint */
 @media (min-width: 1024px) {
     .leadership-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Balanced for your 3 core leaders */
     }
 }
 
@@ -217,7 +213,6 @@ body {
     position: relative;
 }
 
-/* Mobile adjustments for layout spacing */
 @media (max-width: 480px) {
     .header-text h1 { font-size: 1rem; }
     .sub-title { font-size: 0.85rem; }
