@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boys' Brigade Nigeria | 15th Mainland Company, Alagomeji</title>
+<meta name="description" content="The Boys' Brigade Nigeria, 15th Mainland Company, Alagomeji. Advancing Christ's Kingdom among Boys. Sure and Stedfast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <img src="bb-logo.jpg" alt="The Boys' Brigade Nigeria logo" class="logo">
+    <div class="titles">
+      <h1>The Boys' Brigade Nigeria</h1>
+      <p>15th Mainland Company, Alagomeji</p>
+    </div>
+    <img src="nkst-logo.jpg" alt="15th Mainland Company logo" class="logo">
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">15th Mainland Company, Alagomeji</p>
+      <h2 id="hero-title">Sure and Stedfast.</h2>
+      <p class="lead">Advancing Christ's Kingdom among Boys, founded on Religion and Discipline.</p>
+      <div class="actions">
+        <a href="#programmes" class="btn btn-gold">Upcoming programmes</a>
+        <a href="#leadership" class="btn btn-ghost">Meet our leadership</a>
+        <a href="#contact" class="btn btn-ghost">Send a message</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="wrap">
+      <h3 class="section-title">About Us</h3>
+      <p class="about-text">Founded on the twin pillars of <strong>Religion and Discipline</strong>, the 15th Mainland Company Alagomeji is dedicated to the advancement of Christ’s Kingdom among Boys. Our motto is <em>“Sure and Stedfast”</em>.</p>
+      <div class="pillars">
+        <div class="pillar"><span>Pillar one</span><strong>Religion</strong></div>
+        <div class="pillar"><span>Pillar two</span><strong>Discipline</strong></div>
+        <div class="pillar gold"><span>Our motto</span><strong>Sure and Stedfast</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership" class="section alt">
+    <div class="wrap">
+      <h3 class="section-title">Company Leadership</h3>
+      <div class="leadership-grid">
+        <article class="leader-card" data-role="Chaplain"><img src="chaplain.png" alt="The Chaplain"><h4>The Chaplain</h4><p class="leader-name"></p></article>
+        <article class="leader-card" data-role="Captain"><img src="captain.jpeg" alt="The Captain"><h4>The Captain</h4><p class="leader-name"></p></article>
+        <article class="leader-card"><img src="patrone-chairman.png" alt="Chairman of Patrons"><h4>Chairman of Patrons</h4></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="programmes" class="section">
+    <div class="wrap">
+      <h3 class="section-title">Upcoming Programmes</h3>
+      <div id="events-container" class="events-grid"></div>
+    </div>
+  </section>
+
+  <section id="membership" class="section alt">
+    <div class="wrap narrow">
+      <h3 class="section-title">Company Membership</h3>
+      <div class="accordion">
+        <button class="acc-btn" id="b-officers" aria-expanded="false" aria-controls="officers-p"><span class="acc-title">Officers</span><span class="count"></span><span class="icon" aria-hidden="true"></span></button>
+        <div id="officers-p" class="panel" role="region" aria-labelledby="b-officers" hidden><ul id="list-officers"></ul></div>
+
+        <button class="acc-btn" id="b-ncos" aria-expanded="false" aria-controls="ncos-p"><span class="acc-title">NCOs</span><span class="count"></span><span class="icon" aria-hidden="true"></span></button>
+        <div id="ncos-p" class="panel" role="region" aria-labelledby="b-ncos" hidden><ul id="list-ncos"></ul></div>
+
+        <button class="acc-btn" id="b-boys" aria-expanded="false" aria-controls="boys-p"><span class="acc-title">Boys / Anchor Boys</span><span class="count"></span><span class="icon" aria-hidden="true"></span></button>
+        <div id="boys-p" class="panel" role="region" aria-labelledby="b-boys" hidden>
+          <h5>Anchor Boys</h5><ul id="list-anchors"></ul>
+          <h5>Company Section</h5><ul id="list-company"></ul>
+        </div>
+
+        <button class="acc-btn" id="b-exco" aria-expanded="false" aria-controls="exco-p"><span class="acc-title">Company EXCO</span><span class="count"></span><span class="icon" aria-hidden="true"></span></button>
+        <div id="exco-p" class="panel" role="region" aria-labelledby="b-exco" hidden><ul id="list-exco"></ul></div>
+
+        <button class="acc-btn" id="b-patrons" aria-expanded="false" aria-controls="patrons-p"><span class="acc-title">Patrons &amp; Patronesses</span><span class="count"></span><span class="icon" aria-hidden="true"></span></button>
+        <div id="patrons-p" class="panel" role="region" aria-labelledby="b-patrons" hidden><ul id="list-patrons"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap contact">
+      <div class="contact-intro">
+        <h3 class="section-title left">Send Us a Message</h3>
+        <p>Have a question about the Company, joining, or one of our programmes? Write to us and we will reply as soon as we can.</p>
+        <p class="contact-motto">Sure and Stedfast.</p>
+      </div>
+      <form id="contact-form">
+        <div class="row">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label>What is your message about?
+          <select name="topic">
+            <option>General enquiry</option>
+            <option>Joining the Company</option>
+            <option>Programmes and events</option>
+            <option>Parents and guardians</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <input type="hidden" name="_subject" value="New message from the 15th Mainland Company website">
+        <button class="btn btn-gold" type="submit">Send message</button>
+        <p class="note" id="form-note" role="status" aria-live="polite">Your message goes straight to our team.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 The Boys' Brigade Nigeria, 15th Mainland Company, Alagomeji.</p>
+    <p class="motto">Sure and Stedfast.</p>
+    <p class="foot-link"><a href="#contact">Send us a message</a></p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
