@@ -48,9 +48,10 @@ async function loadSiteData() {
       btn.querySelector('.count').textContent = n || '';
     });
 
-    // Names under the leadership photos (taken from the EXCO list)
+    // Names under the leadership photos (taken from the EXCO and Patrons lists)
+    const leadershipPool = [...(data.exco || []), ...(data.patrons || [])];
     document.querySelectorAll('.leader-card[data-role]').forEach(card => {
-      const person = (data.exco || []).find(p => p.role === card.dataset.role);
+      const person = leadershipPool.find(p => p.role === card.dataset.role);
       const slot = card.querySelector('.leader-name');
       if (person && slot) slot.textContent = person.name;
     });

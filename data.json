@@ -80,7 +80,7 @@
     { "id": 14, "name": "Lt. Barr. Obed Selumun Juur", "role": "Legal Adviser" }
   ],
   "patrons": [
-    { "id": 1, "name": "Mr. Andrew Adikpo", "role": null },
+    { "id": 1, "name": "Mr. Andrew Adikpo", "role": "Chairman Patron/Patronessess" },
     { "id": 2, "name": "Mr. Matthew Asase", "role": null },
     { "id": 3, "name": "Mr. Vanen Ande", "role": null },
     { "id": 4, "name": "Capt. Martins Fefa", "role": null },

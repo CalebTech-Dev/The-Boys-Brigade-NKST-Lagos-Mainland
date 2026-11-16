@@ -336,7 +336,7 @@ window.SITE_DATA = {
     {
       "id": 1,
       "name": "Mr. Andrew Adikpo",
-      "role": null
+      "role": "Chairman Patron/Patronessess"
     },
     {
       "id": 2,
